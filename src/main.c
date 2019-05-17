@@ -55,6 +55,11 @@ int main(int argsc, char * argsv[]) {
   }
 
   info.size_width = strtoul(awidth, NULL, 10);
+  if (info.size_width < 64 || info.size_width > 32768) {
+    fprintf(stderr, "Invalid width. Type \"%s\" for help.\n", argsv[0]);
+    return EXIT_FAILURE;
+  }
+
   char * aheight = strtok(NULL, "x");
   if (!aheight) {
     fprintf(stderr, "Invalid height. Type \"%s\" for help.\n", argsv[0]);
@@ -62,6 +67,10 @@ int main(int argsc, char * argsv[]) {
   }
 
   info.size_height = strtoul(aheight, NULL, 10);
+  if (info.size_height < 64 || info.size_height > 32768) {
+    fprintf(stderr, "Invalid height. Type \"%s\" for help.\n", argsv[0]);
+    return EXIT_FAILURE;
+  }
 
   // Output file path
   info.filename = argsv[3];
