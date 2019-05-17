@@ -191,6 +191,8 @@ uint8_t ** bgg_gen(bgg_proc *info) {
     uint32_t pixels = 1;
     uint32_t walked = 0;
 
+    printf("Progress:  ");
+
     do {
       bool numIsPrime = _is_prime(num++, &primes, &primes_len);
       if (x >= 0 && x < info->size_width
@@ -207,13 +209,14 @@ uint8_t ** bgg_gen(bgg_proc *info) {
 
         ++currentSize;
 
-        if (currentSize % (targetSize / 20) == 0) {
+        if (currentSize % (targetSize / 100) == 0) {
+          const uint32_t percent = (uint32_t) ((float) currentSize / (float) targetSize * 100.0f);
           // Delete last
-          for (size_t i = 0; i < 80; ++i)
+          for (size_t i = 0; i < (percent <= 10 ? 1 : 2); ++i)
             putchar('\b');
 
-          printf("Progress: %.0f",
-              (float) currentSize / (float) targetSize * 100.0f);
+          printf("%u", percent);
+          fflush(stdout);
         }
       }
 
