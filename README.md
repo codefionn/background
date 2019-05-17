@@ -2,6 +2,20 @@
 
 Generates background images for *your* desktop.
 
+## Examples
+
+**Drop**:
+![Drop](./examples/drop.png)
+
+**Wall**:
+![Wall](./examples/wall.png)
+
+**Primes**:
+![Primes](./examples/primes.png)
+
+**Random**:
+![Random](./examples/random.png)
+
 ## Build
 
 Dependencies:
