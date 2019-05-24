@@ -4,16 +4,16 @@ Generates background images for *your* desktop.
 
 ## Examples
 
-**Drop**:
+``./background drop 1280x128 drop.png``:
 ![Drop](./examples/drop.png)
 
-**Wall**:
+``./background wall 1280x128 wall.png``:
 ![Wall](./examples/wall.png)
 
-**Primes**:
+``./background primes 1280x128 primes.png``:
 ![Primes](./examples/primes.png)
 
-**Random**:
+``./background random 1280x128 random.png``:
 ![Random](./examples/random.png)
 
 ## Build
